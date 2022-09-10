@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.props" Condition="Exists('..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{4A3C8C8B-6642-405F-B349-57E23903F15B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTMiner</RootNamespace>
+    <AssemblyName>UnitTests</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">15.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+    <ReferencePath>$(ProgramFiles)\Common Files\microsoft shared\VSTT\$(VisualStudioVersion)\UITestExtensionPackages</ReferencePath>
+    <IsCodedUITest>False</IsCodedUITest>
+    <TestProjectType>UnitTest</TestProjectType>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Aliyun.OSS, Version=2.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Aliyun.OSS.SDK.2.8.0\lib\Aliyun.OSS.dll</HintPath>
+    </Reference>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\MSTest.TestFramework.2.1.2\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenHardwareMonitorLib">
+      <HintPath>..\ThirdPartyDlls\OpenHardwareMonitorLib.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Qiniu, Version=7.3.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ThirdPartyDlls\Qiniu.dll</HintPath>
+    </Reference>
+    <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\StackExchange.Redis.1.2.6\lib\net45\StackExchange.Redis.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppTypeTests.cs" />
+    <Compile Include="Base64StringTests.cs" />
+    <Compile Include="BinarySerializerTests.cs" />
+    <Compile Include="BoxTests.cs" />
+    <Compile Include="ConvertTests.cs" />
+    <Compile Include="CpuTests.cs" />
+    <Compile Include="DataSchema\DataSchemaTests.cs" />
+    <Compile Include="DataSchema\DataSchemaLogger.cs" />
+    <Compile Include="DependencyObjectTests.cs" />
+    <Compile Include="DotNet45Tests.cs" />
+    <Compile Include="EncodingTests.cs" />
+    <Compile Include="EnumTests.cs" />
+    <Compile Include="EnvironmentTests.cs" />
+    <Compile Include="FuncTests.cs" />
+    <Compile Include="GpuNameTests.cs" />
+    <Compile Include="GuidTests.cs" />
+    <Compile Include="GZipUtilTests.cs" />
+    <Compile Include="IoTests.cs" />
+    <Compile Include="LiteDBTests.cs" />
+    <Compile Include="NameValueCollectionTests.cs" />
+    <Compile Include="NTMinerDataSchemasTests.cs" />
+    <Compile Include="NTStopwatchTests.cs" />
+    <Compile Include="OSSTests.cs" />
+    <Compile Include="PathPriorityTests.cs" />
+    <Compile Include="PerformanceCounterTests.cs" />
+    <Compile Include="PInvokeTests.cs" />
+    <Compile Include="RamTests.cs" />
+    <Compile Include="CryptographyTests.cs" />
+    <Compile Include="RandomTests.cs" />
+    <Compile Include="ReflectionTests.cs" />
+    <Compile Include="RoleTests.cs" />
+    <Compile Include="SecureStringTests.cs" />
+    <Compile Include="ShardingHasherTests.cs" />
+    <Compile Include="SpeedTests.cs" />
+    <Compile Include="StackTraceTests.cs" />
+    <Compile Include="StopwatchTests.cs" />
+    <Compile Include="StreamTests.cs" />
+    <Compile Include="TestUtil.cs" />
+    <Compile Include="UnitTest1.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IPTests.cs" />
+    <Compile Include="MarshalTests.cs" />
+    <Compile Include="RegexTests.cs" />
+    <Compile Include="TimingTests.cs" />
+    <Compile Include="RemoteDesktopTests.cs" />
+    <Compile Include="LocalMessageTests.cs" />
+    <Compile Include="NetTests.cs" />
+    <Compile Include="JsonSerializerTests.cs" />
+    <Compile Include="HttpClientTests.cs" />
+    <Compile Include="DictionaryTests.cs" />
+    <Compile Include="ResourceDictionaryTests.cs" />
+    <Compile Include="RedisTests.cs" />
+    <Compile Include="PartialTests.cs" />
+    <Compile Include="F2poolTests.cs" />
+    <Compile Include="UriTests.cs" />
+    <Compile Include="VersionTests.cs" />
+    <Compile Include="WebSocketTests.cs" />
+    <Compile Include="WMITests.cs" />
+    <Compile Include="WsMessageTests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataSchema\GpuProfilesJsonDb.schema" />
+    <None Include="DataSchema\LocalJsonDb.schema" />
+    <None Include="DataSchema\ServerJsonDb.schema" />
+    <None Include="data\clientDatas.json" />
+    <None Include="data\speedData.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AppModels\AppModels.csproj">
+      <Project>{3426f677-5026-4bb1-a0b2-dd5d9bd70d07}</Project>
+      <Name>AppModels</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CalcConfigUpdater\CalcConfigUpdater.csproj">
+      <Project>{5646cada-feaf-4991-abda-dbebcd54d792}</Project>
+      <Name>CalcConfigUpdater</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MinerClient\MinerClient.csproj">
+      <Project>{128b59a2-fa1a-479c-9136-7eb866b96fb4}</Project>
+      <Name>MinerClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MinerStudio\MinerStudio.csproj">
+      <Project>{6ed1f43a-b43f-4be4-80dd-49297cf3dc4f}</Project>
+      <Name>MinerStudio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMiner.Controllers\NTMiner.Controllers.csproj">
+      <Project>{5911457a-357a-412d-a20c-e77c1a56b4f6}</Project>
+      <Name>NTMiner.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerClient\NTMinerClient.csproj">
+      <Project>{85d052ab-44b8-46f3-9d7b-f624c24fd8ba}</Project>
+      <Name>NTMinerClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerDataSchemas\NTMinerDataSchemas.csproj">
+      <Project>{defc7387-f9fa-4651-a281-6612efb7fbb6}</Project>
+      <Name>NTMinerDataSchemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerGpus\NTMinerGpus.csproj">
+      <Project>{035c9774-01fc-4df2-8225-769542a9fd5e}</Project>
+      <Name>NTMinerGpus</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerHub\NTMinerHub.csproj">
+      <Project>{e17f278a-e393-403e-9d37-e371036d7a02}</Project>
+      <Name>NTMinerHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerlib\NTMinerlib.csproj">
+      <Project>{5d0f2719-83fd-40fc-8f65-85ebb891bc13}</Project>
+      <Name>NTMinerlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerLogging\NTMinerLogging.csproj">
+      <Project>{f5091b28-5bb6-4446-9b97-02b37125e340}</Project>
+      <Name>NTMinerLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerRpcClient\NTMinerRpcClient.csproj">
+      <Project>{c7108d8f-eb73-4ae3-916f-be817ede37af}</Project>
+      <Name>NTMinerRpcClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerServer\NTMinerServer.csproj">
+      <Project>{cb2619b7-3f59-41b7-a562-4a3f117822ce}</Project>
+      <Name>NTMinerServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerWpf\NTMinerWpf.csproj">
+      <Project>{dd8e010e-d5e9-47cf-9cb4-8dc6e13d483d}</Project>
+      <Name>NTMinerWpf</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\websocket-sharp\websocket-sharp.csproj">
+      <Project>{b357bac7-529e-4d81-a0d2-71041b19c8de}</Project>
+      <Name>websocket-sharp</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+    <Error Condition="!Exists('..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.props'))" />
+    <Error Condition="!Exists('..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.targets'))" />
+  </Target>
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Import Project="..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.targets" Condition="Exists('..\..\packages\MSTest.TestAdapter.2.1.2\build\net45\MSTest.TestAdapter.targets')" />
+</Project>

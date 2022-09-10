@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5911457A-357A-412D-A20C-E77C1A56B4F6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTMiner.Controllers</RootNamespace>
+    <AssemblyName>NTMiner.Controllers</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControllerUtil.cs" />
+    <Compile Include="IAdminController.cs" />
+    <Compile Include="ICalcConfigBinaryController`1.cs" />
+    <Compile Include="ICaptchaController`1.cs" />
+    <Compile Include="IMinerClientController.cs" />
+    <Compile Include="INTMinerFileController.cs" />
+    <Compile Include="IServerMessageBinaryController`1.cs" />
+    <Compile Include="IUserAppSettingController.cs" />
+    <Compile Include="IWsServerNodeController.cs" />
+    <Compile Include="IUserController.cs" />
+    <Compile Include="IAppSettingController.cs" />
+    <Compile Include="IClientDataController.cs" />
+    <Compile Include="ICalcConfigController.cs" />
+    <Compile Include="IFileUrlController.cs" />
+    <Compile Include="IKernelOutputKeywordController.cs" />
+    <Compile Include="IUserMinerGroupController.cs" />
+    <Compile Include="IMinerStudioController.cs" />
+    <Compile Include="IUserMineWorkController.cs" />
+    <Compile Include="INTMinerDaemonController.cs" />
+    <Compile Include="INTMinerWalletController.cs" />
+    <Compile Include="IOverClockDataController.cs" />
+    <Compile Include="IServerMessageController.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NTMinerDataSchemas\NTMinerDataSchemas.csproj">
+      <Project>{defc7387-f9fa-4651-a281-6612efb7fbb6}</Project>
+      <Name>NTMinerDataSchemas</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

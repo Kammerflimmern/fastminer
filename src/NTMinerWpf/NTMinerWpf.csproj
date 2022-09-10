@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DD8E010E-D5E9-47CF-9CB4-8DC6E13D483D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTMiner</RootNamespace>
+    <AssemblyName>NTMinerWpf</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppUtil.cs" />
+    <Compile Include="Converters\SortDirectionToVisibilityConverter.cs" />
+    <Compile Include="Converters\IntToHiddenConverter.cs" />
+    <Compile Include="Converters\MbToGbConverter.cs" />
+    <Compile Include="FrameworkElementExtension.cs" />
+    <Compile Include="IApp.cs" />
+    <Compile Include="Views\Ucs\MessagePathIds.xaml.cs">
+      <DependentUpon>MessagePathIds.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ucs\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vms\MessagePathIdsViewModel.cs" />
+    <Compile Include="Vms\PagingViewModel.cs" />
+    <Compile Include="IVmFrameworkElement`1.cs" />
+    <Compile Include="Controls\ControlExtensions.cs" />
+    <Compile Include="Controls\IpAddressControl.xaml.cs">
+      <DependentUpon>IpAddressControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\BoolToBrushInvertConverter.cs" />
+    <Compile Include="Converters\BoolToStreamGeometryConverter.cs" />
+    <Compile Include="ViewModelExtension.cs" />
+    <Compile Include="Views\ContainerWindow.xaml.cs">
+      <DependentUpon>ContainerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LocalIpConfig.xaml.cs">
+      <DependentUpon>LocalIpConfig.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ucs\Icons.xaml.cs">
+      <DependentUpon>Icons.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VmFrameworkElementExtensions.cs" />
+    <Compile Include="Vms\ContainerWindowViewModel.cs" />
+    <Compile Include="Vms\DialogWindowViewModel.cs" />
+    <Compile Include="Vms\IconsViewModel.cs" />
+    <Compile Include="Vms\IpAddressControlViewModel.cs" />
+    <Compile Include="Controls\IPRangeValidationRule.cs" />
+    <Compile Include="Controls\KbButton.cs" />
+    <Compile Include="Controls\KbComboBox.cs" />
+    <Compile Include="Controls\KbLinkButton.cs" />
+    <Compile Include="Controls\KbSystemButton.cs" />
+    <Compile Include="Controls\KbSystemCloseButton.cs" />
+    <Compile Include="Controls\KbSystemMaxButton.cs" />
+    <Compile Include="Controls\KbSystemMinButton.cs" />
+    <Compile Include="Controls\KbMuiltilineTextBox.cs" />
+    <Compile Include="Controls\KbTextBox.cs" />
+    <Compile Include="Controls\PasswordBoxHelper.cs" />
+    <Compile Include="Converters\TrueTransparentElseWhiteConverter.cs" />
+    <Compile Include="Converters\BoolToBrushConverter.cs" />
+    <Compile Include="Converters\BoolToHiddenInvertConverter.cs" />
+    <Compile Include="Converters\NoRecordInvertVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolInvertConverter.cs" />
+    <Compile Include="Converters\BoolToHiddenConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityInvertConverter.cs" />
+    <Compile Include="Converters\ByteToGbConverter.cs" />
+    <Compile Include="Converters\ByteToMbConverter.cs" />
+    <Compile Include="Converters\NoRecordVisibilityConverter.cs" />
+    <Compile Include="Converters\NotNullOrEmptyBooleanConverter.cs" />
+    <Compile Include="Converters\NotNullOrEmptyVisibilityConverter.cs" />
+    <Compile Include="Converters\NotNullOrEmptyVisibilityInvertConverter.cs" />
+    <Compile Include="Converters\PercentToLengthConverter.cs" />
+    <Compile Include="Converters\StringLenConverter.cs" />
+    <Compile Include="Converters\VisibilityInvertConverter.cs" />
+    <Compile Include="DelegateCommand.cs" />
+    <Compile Include="DelegateCommand`1.cs" />
+    <Compile Include="HotKeyUtil.cs" />
+    <Compile Include="SystemHotKey.cs" />
+    <Compile Include="UIThread.cs" />
+    <Compile Include="Notifications\ContentLocation.cs" />
+    <Compile Include="Notifications\Controls\NotificationMessage.cs" />
+    <Compile Include="Notifications\Controls\NotificationMessageButton.cs" />
+    <Compile Include="Notifications\Controls\NotificationMessageContainer.cs" />
+    <Compile Include="Notifications\INotificationAnimation.cs" />
+    <Compile Include="Notifications\INotificationMessage.cs" />
+    <Compile Include="Notifications\INotificationMessageButton.cs" />
+    <Compile Include="Notifications\INotificationMessageFactory.cs" />
+    <Compile Include="Notifications\INotificationMessageManager.cs" />
+    <Compile Include="Notifications\NotificationMessageBuilder.cs" />
+    <Compile Include="Notifications\NotificationMessageBuilderLinq.cs" />
+    <Compile Include="Notifications\NotificationMessageFactory.cs" />
+    <Compile Include="Notifications\NotificationMessageManager.cs" />
+    <Compile Include="Notifications\NotificationMessageManagerEventArgs.cs" />
+    <Compile Include="Notifications\NotificationMessageManagerEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="IMaskWindow.cs" />
+    <Compile Include="Views\InputWindow.xaml.cs">
+      <DependentUpon>InputWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vms\LocalIpConfigViewModel.cs" />
+    <Compile Include="Vms\LocalIpViewModel.cs" />
+    <Compile Include="Vms\SignUpPageViewModel.cs" />
+    <Compile Include="WindowExtension.cs" />
+    <Compile Include="Win32Proc.cs" />
+    <Compile Include="WindowsShortcut.cs" />
+    <Compile Include="NativeMethods.cs" />
+    <Compile Include="Views\NotiCenterWindow.xaml.cs">
+      <DependentUpon>NotiCenterWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Vms\NotiCenterWindowViewModel.cs" />
+    <Compile Include="Vms\NotificationMessageManagerExtension.cs" />
+    <Compile Include="Vms\FormType.cs" />
+    <Compile Include="Vms\IEditableViewModel.cs" />
+    <Compile Include="Vms\LoginWindowViewModel.cs" />
+    <Compile Include="Vms\ViewModelBase.cs" />
+    <Compile Include="Views\DialogWindow.xaml.cs">
+      <DependentUpon>DialogWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WpfTimingEventProducer.cs" />
+    <Compile Include="WpfUtil.cs" />
+    <Compile Include="Controls\BindingProxy.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\IpAddressControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Notifications\Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\LeftBarScrollViewer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\CheckBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\KbComboBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\KbButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\DataGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\KbIcons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\KbSkin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Styles\KbTextBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContainerWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Design\IconsViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Design\DialogWindowViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Design\LocalIpConfigViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Design\LoginWindowViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Design\MessagePathIdsViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Design\SignUpPageViewModel.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\InputWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\DialogWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LocalIpConfig.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\NotiCenterWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\LoginWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Ucs\Icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Ucs\MessagePathIds.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Ucs\SignUpPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\Images\logo128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\Images\logo32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\Images\logo48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\Images\cc128.png" />
+    <Resource Include="Styles\Images\cc32.png" />
+    <Resource Include="Styles\Images\cc64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BlankWindow\BlankWindow.csproj">
+      <Project>{b7107a67-a76e-4313-8c5b-3265dde238b6}</Project>
+      <Name>BlankWindow</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerDataSchemas\NTMinerDataSchemas.csproj">
+      <Project>{defc7387-f9fa-4651-a281-6612efb7fbb6}</Project>
+      <Name>NTMinerDataSchemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerHub\NTMinerHub.csproj">
+      <Project>{e17f278a-e393-403e-9d37-e371036d7a02}</Project>
+      <Name>NTMinerHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerlib\NTMinerlib.csproj">
+      <Project>{5d0f2719-83fd-40fc-8f65-85ebb891bc13}</Project>
+      <Name>NTMinerlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerLogging\NTMinerLogging.csproj">
+      <Project>{f5091b28-5bb6-4446-9b97-02b37125e340}</Project>
+      <Name>NTMinerLogging</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerRpcClient\NTMinerRpcClient.csproj">
+      <Project>{c7108d8f-eb73-4ae3-916f-be817ede37af}</Project>
+      <Name>NTMinerRpcClient</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="IWshRuntimeLibrary">
+      <Guid>{F935DC20-1CF0-11D0-ADB9-00C04FD58A0B}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Styles\Images\aojiang.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+</Project>

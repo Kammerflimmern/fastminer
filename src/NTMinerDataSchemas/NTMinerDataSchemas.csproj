@@ -1,0 +1,308 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DEFC7387-F9FA-4651-A281-6612EFB7FBB6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NTMiner</RootNamespace>
+    <AssemblyName>NTMinerDataSchemas</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Base64Util.cs" />
+    <Compile Include="Core\ConsoleOutLine.cs" />
+    <Compile Include="Core\CaptchaData.cs" />
+    <Compile Include="Core\AfterTimeRequest.cs" />
+    <Compile Include="Core\ConsoleOutLines.cs" />
+    <Compile Include="Core\KernelOutputExtensions.cs" />
+    <Compile Include="Core\LocalMessages.cs" />
+    <Compile Include="Core\MinerServer\NTMinerFilesRequest.cs" />
+    <Compile Include="Core\MinerServer\NTMinerFilesResponse.cs" />
+    <Compile Include="Core\MinerServer\QueryClientsResponseEx.cs" />
+    <Compile Include="Core\OperationResults.cs" />
+    <Compile Include="Core\UserGetSpeedRequest.cs" />
+    <Compile Include="Gpus\GpuExtensions.cs" />
+    <Compile Include="Gpus\GpuName.cs" />
+    <Compile Include="Gpus\GpuNameCount.cs" />
+    <Compile Include="Gpus\GpuTypeExtensions.cs" />
+    <Compile Include="Gpus\IGpu.cs" />
+    <Compile Include="Gpus\IGpuName.cs" />
+    <Compile Include="Gpus\IGpuNameCount.cs" />
+    <Compile Include="Gpus\QueryGpuNameCountsRequest.cs" />
+    <Compile Include="Gpus\QueryGpuNameCountsResponse.cs" />
+    <Compile Include="Core\GuidExtensions.cs" />
+    <Compile Include="Core\ICaptcha.cs" />
+    <Compile Include="Core\IOperationResult.cs" />
+    <Compile Include="Core\LocalMessageDto.cs" />
+    <Compile Include="Core\ILocalMessageDto.cs" />
+    <Compile Include="Core\MinerClient\LocalIpInput.cs" />
+    <Compile Include="Core\MinerClient\MinerClientActionType.cs" />
+    <Compile Include="Core\MinerServer\ClientDataSortField.cs" />
+    <Compile Include="Core\MinerServer\GetWorkJsonRequest.cs" />
+    <Compile Include="Core\MinerServer\GetWorkJsonResponse.cs" />
+    <Compile Include="Core\MinerServer\IClientData.cs" />
+    <Compile Include="Core\MinerServer\IMinerSign.cs" />
+    <Compile Include="Core\MinerServer\MinerDataExtensions.cs" />
+    <Compile Include="Core\MinerServer\MinerSign.cs" />
+    <Compile Include="Core\MinerServer\QueryClientsForWsRequest.cs" />
+    <Compile Include="Core\Profile\IProfile.cs" />
+    <Compile Include="Core\WorkType.cs" />
+    <Compile Include="DataSchemaIdAttribute.cs" />
+    <Compile Include="EnumExtension.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="IConsoleOutLine.cs" />
+    <Compile Include="ICountSet.cs" />
+    <Compile Include="IPagingRequest.cs" />
+    <Compile Include="IRedisLazySet.cs" />
+    <Compile Include="IsNotDataSchemaAttribute.cs" />
+    <Compile Include="NTKeyword.cs" />
+    <Compile Include="PagingRequestExtensions.cs" />
+    <Compile Include="Report\ISpeedData.cs" />
+    <Compile Include="Report\SpeedData.cs" />
+    <Compile Include="ServerNode\ActionCountData.cs" />
+    <Compile Include="ServerNode\ClientTestIdData.cs" />
+    <Compile Include="ServerNode\IClientTestId.cs" />
+    <Compile Include="ServerNode\IMqReceivedCount.cs" />
+    <Compile Include="ServerNode\IMqSendCount.cs" />
+    <Compile Include="ServerNode\IRemoteIpEntry.cs" />
+    <Compile Include="ServerNode\MqAppIds.cs" />
+    <Compile Include="ServerNode\MqCountData.cs" />
+    <Compile Include="ServerNode\MqReceivedCountData.cs" />
+    <Compile Include="ServerNode\MqSendCountData.cs" />
+    <Compile Include="ServerNode\QueryActionCountsRequest.cs" />
+    <Compile Include="ServerNode\QueryActionCountsResponse.cs" />
+    <Compile Include="ServerNode\CpuData.cs" />
+    <Compile Include="ServerNode\IActionCount.cs" />
+    <Compile Include="ServerNode\ICpuData.cs" />
+    <Compile Include="ServerNode\IServerState.cs" />
+    <Compile Include="ServerNode\IServerStateResponse.cs" />
+    <Compile Include="ServerNode\IVarServerState.cs" />
+    <Compile Include="ServerNode\IVarWsServerNode.cs" />
+    <Compile Include="ServerNode\IWebApiServerState.cs" />
+    <Compile Include="ServerNode\RemoteIpEntryDto.cs" />
+    <Compile Include="ServerNode\ServerAddress.cs" />
+    <Compile Include="ServerNode\TopNRemoteIpsResponse.cs" />
+    <Compile Include="ServerNode\WebApiServerState.cs" />
+    <Compile Include="ServerNode\WsStatus.cs" />
+    <Compile Include="Core\OperationResultDto.cs" />
+    <Compile Include="Core\OperationResultData.cs" />
+    <Compile Include="Core\Profile\WorkIgnoreAttribute.cs" />
+    <Compile Include="SetBase.cs" />
+    <Compile Include="TypeExtensions.cs" />
+    <Compile Include="User\ITryLoginTimes.cs" />
+    <Compile Include="User\IWsUserName.cs" />
+    <Compile Include="User\TryLoginTimes.cs" />
+    <Compile Include="VirtualMemory\DriveDto.cs" />
+    <Compile Include="VirtualMemory\IDrive.cs" />
+    <Compile Include="ServerNode\GetWsServerNodeAddressRequest.cs" />
+    <Compile Include="IData.cs" />
+    <Compile Include="IDbEntity`1.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IgnoreReflectionSetAttribute.cs" />
+    <Compile Include="ServerNode\IWsServerNode.cs" />
+    <Compile Include="Role\RoleEnum.cs" />
+    <Compile Include="SortDirection.cs" />
+    <Compile Include="UpdateByReflection.cs" />
+    <Compile Include="User\AESPassword.cs" />
+    <Compile Include="User\ILoginedUser.cs" />
+    <Compile Include="User\ILoginName.cs" />
+    <Compile Include="User\IUserMinerGroup.cs" />
+    <Compile Include="User\ISignUpInput.cs" />
+    <Compile Include="User\IUser.cs" />
+    <Compile Include="MinerIpExtensions.cs" />
+    <Compile Include="User\ChangePasswordRequest.cs" />
+    <Compile Include="Core\CoinData.cs" />
+    <Compile Include="Core\CoinGroupData.cs" />
+    <Compile Include="Core\CoinKernelData.cs" />
+    <Compile Include="Core\EnvironmentVariable.cs" />
+    <Compile Include="Core\FileWriterData.cs" />
+    <Compile Include="Core\FragmentWriterData.cs" />
+    <Compile Include="Core\GroupData.cs" />
+    <Compile Include="Core\IFragmentWriter.cs" />
+    <Compile Include="Core\ICoin.cs" />
+    <Compile Include="Core\ICoinGroup.cs" />
+    <Compile Include="Core\ICoinKernel.cs" />
+    <Compile Include="Core\IFileWriter.cs" />
+    <Compile Include="Core\IGroup.cs" />
+    <Compile Include="Core\IKernel.cs" />
+    <Compile Include="Core\IKernelInput.cs" />
+    <Compile Include="Core\IInputSegment.cs" />
+    <Compile Include="Core\IKernelOutput.cs" />
+    <Compile Include="Core\IKernelOutputTranslater.cs" />
+    <Compile Include="Core\IPackage.cs" />
+    <Compile Include="Core\IPoolKernel.cs" />
+    <Compile Include="Core\ISysDic.cs" />
+    <Compile Include="Core\ISysDicItem.cs" />
+    <Compile Include="Core\KernelData.cs" />
+    <Compile Include="Core\KernelExtension.cs" />
+    <Compile Include="Core\KernelInputData.cs" />
+    <Compile Include="Core\InputSegment.cs" />
+    <Compile Include="Core\KernelOutputData.cs" />
+    <Compile Include="Core\KernelOutputTranslaterData.cs" />
+    <Compile Include="IMinerIp.cs" />
+    <Compile Include="Core\MinerServer\SetAutoBootStartRequest.cs" />
+    <Compile Include="WrapperClientIdData.cs" />
+    <Compile Include="WrapperClientId.cs" />
+    <Compile Include="Core\PackageData.cs" />
+    <Compile Include="Core\PoolKernelData.cs" />
+    <Compile Include="Core\SupportedGpu.cs" />
+    <Compile Include="Core\SysDicData.cs" />
+    <Compile Include="Core\SysDicItemData.cs" />
+    <Compile Include="DataLevel.cs" />
+    <Compile Include="ICanUpdateByReflection.cs" />
+    <Compile Include="Core\SpeedDoubleExtension.cs" />
+    <Compile Include="ISignableData.cs" />
+    <Compile Include="DataResponse`1.cs" />
+    <Compile Include="Core\IOverClockInput.cs" />
+    <Compile Include="User\ISignUser.cs" />
+    <Compile Include="JsonDb\IGpuProfilesJsonDb.cs" />
+    <Compile Include="JsonDb\IJsonDb.cs" />
+    <Compile Include="User\IUserAppSetting.cs" />
+    <Compile Include="User\IUserMineWork.cs" />
+    <Compile Include="User\LoginedUser.cs" />
+    <Compile Include="User\QueryUsersRequest.cs" />
+    <Compile Include="User\QueryUsersResponse.cs" />
+    <Compile Include="User\UserAppSettingData.cs" />
+    <Compile Include="User\UserData.cs" />
+    <Compile Include="User\SignUpRequest.cs" />
+    <Compile Include="User\UserMinerGroupData.cs" />
+    <Compile Include="User\UserMineWorkData.cs" />
+    <Compile Include="User\UserStatus.cs" />
+    <Compile Include="User\UserUpdateData.cs" />
+    <Compile Include="User\UserUpdateInput.cs" />
+    <Compile Include="User\WsUserName.cs" />
+    <Compile Include="Ws\IWsClient.cs" />
+    <Compile Include="Ws\WsClientState.cs" />
+    <Compile Include="Ws\WsMessage.cs" />
+    <Compile Include="Gpus\IGpuSpeedData.cs" />
+    <Compile Include="Core\MinerClient\ILocalIp.cs" />
+    <Compile Include="Report\ISpeedDto.cs" />
+    <Compile Include="Core\MinerClient\LocalIpDto.cs" />
+    <Compile Include="Core\MinerServer\IMinerData.cs" />
+    <Compile Include="Core\MinerServer\INTMinerWallet.cs" />
+    <Compile Include="Core\MinerServer\IServerMessage.cs" />
+    <Compile Include="Core\MinerServer\KernelOutputKeywordsResponse.cs" />
+    <Compile Include="Core\MinerServer\NTMinerWalletData.cs" />
+    <Compile Include="Core\LocalMessageChannel.cs" />
+    <Compile Include="Report\ReportResponse.cs" />
+    <Compile Include="Core\MinerServer\ServerMessageData.cs" />
+    <Compile Include="Core\MinerServer\ServerMessagesRequest.cs" />
+    <Compile Include="Core\MinerServer\ServerMessageType.cs" />
+    <Compile Include="ServerNode\ServerStateResponse.cs" />
+    <Compile Include="Core\Profile\GpuProfileExtension.cs" />
+    <Compile Include="Core\IKernelOutputKeyword.cs" />
+    <Compile Include="Core\ILocalMessage.cs" />
+    <Compile Include="Core\KernelOutputKeywordData.cs" />
+    <Compile Include="Core\LocalMessageData.cs" />
+    <Compile Include="Gpus\GpuData.cs" />
+    <Compile Include="Gpus\IGpuStaticData.cs" />
+    <Compile Include="Core\MinerServer\MinerData.cs" />
+    <Compile Include="Core\MinerServer\MinerIdsRequest.cs" />
+    <Compile Include="Core\Profile\CoinOverClockData.cs" />
+    <Compile Include="Core\Profile\GpuProfileData.cs" />
+    <Compile Include="Gpus\GpuType.cs" />
+    <Compile Include="JsonDb\GpuProfilesJsonDb.cs" />
+    <Compile Include="Core\Profile\IGpuProfile.cs" />
+    <Compile Include="ILevelEntity`1.cs" />
+    <Compile Include="Core\IPool.cs" />
+    <Compile Include="ISortable.cs" />
+    <Compile Include="Gpus\GpuSpeedData.cs" />
+    <Compile Include="DataRequest`1.cs" />
+    <Compile Include="Core\AppSettingData.cs" />
+    <Compile Include="Core\MinerServer\JsonFileVersionRequest.cs" />
+    <Compile Include="Core\MinerServer\ExportMineWorkRequest.cs" />
+    <Compile Include="NTMinerAppType.cs" />
+    <Compile Include="Core\MinerServer\CalcConfigData.cs" />
+    <Compile Include="Core\MinerServer\ClientData.cs" />
+    <Compile Include="Core\MinerStudio\ColumnsShowData.cs" />
+    <Compile Include="Core\MinerStudio\IColumnsShow.cs" />
+    <Compile Include="Core\MinerServer\IOverClockData.cs" />
+    <Compile Include="Core\Daemon\WorkRequest.cs" />
+    <Compile Include="Core\MinerServer\OverClockData.cs" />
+    <Compile Include="Core\MinerServer\UpdateClientsRequest.cs" />
+    <Compile Include="Core\Daemon\UpgradeNTMinerRequest.cs" />
+    <Compile Include="Core\PoolData.cs" />
+    <Compile Include="Core\Profile\CoinKernelProfileData.cs" />
+    <Compile Include="Core\Profile\CoinProfileData.cs" />
+    <Compile Include="Core\MinerServer\CoinSnapshotData.cs" />
+    <Compile Include="Core\MinerServer\GetCoinSnapshotsRequest.cs" />
+    <Compile Include="Core\MinerServer\GetCoinSnapshotsResponse.cs" />
+    <Compile Include="HashUtil.cs" />
+    <Compile Include="IAppSetting.cs" />
+    <Compile Include="Core\MinerServer\ICalcConfig.cs" />
+    <Compile Include="Core\Profile\ICoinKernelProfile.cs" />
+    <Compile Include="Core\Profile\ICoinProfile.cs" />
+    <Compile Include="IEntity`1.cs" />
+    <Compile Include="Core\IMinerGroup.cs" />
+    <Compile Include="Core\Profile\IMinerProfile.cs" />
+    <Compile Include="Core\IMineWork.cs" />
+    <Compile Include="Core\MinerServer\INTMinerFile.cs" />
+    <Compile Include="Core\Profile\IPoolProfile.cs" />
+    <Compile Include="ITimestampEntity·1.cs" />
+    <Compile Include="Core\IWallet.cs" />
+    <Compile Include="Core\MinerGroupData.cs" />
+    <Compile Include="Core\Profile\MinerProfileData.cs" />
+    <Compile Include="Core\MineStatus.cs" />
+    <Compile Include="Core\MineWorkData.cs" />
+    <Compile Include="Core\MinerServer\NTMinerFileData.cs" />
+    <Compile Include="Core\MinerServer\NTMinerUrlRequest.cs" />
+    <Compile Include="Core\MinerServer\PackageUrlRequest.cs" />
+    <Compile Include="Core\Profile\PoolProfileData.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\MinerServer\QueryClientsRequest.cs" />
+    <Compile Include="Core\MinerServer\QueryClientsResponse.cs" />
+    <Compile Include="Report\ReportState.cs" />
+    <Compile Include="Core\PublishStatus.cs" />
+    <Compile Include="IRequest.cs" />
+    <Compile Include="ResponseBase.cs" />
+    <Compile Include="ResponseBaseExtension.cs" />
+    <Compile Include="Core\MinerServer\SaveCalcConfigsRequest.cs" />
+    <Compile Include="Report\SpeedDto.cs" />
+    <Compile Include="Timestamp.cs" />
+    <Compile Include="Core\MinerServer\UpdateClientRequest.cs" />
+    <Compile Include="Core\WalletData.cs" />
+    <Compile Include="Core\LocalMessageType.cs" />
+    <Compile Include="ServerNode\WsServerNodeState.cs" />
+    <Compile Include="Ws\WsClientStatus.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="README.md" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

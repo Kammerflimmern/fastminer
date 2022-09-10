@@ -1,0 +1,150 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C7108D8F-EB73-4AE3-916F-BE817EDE37AF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NTMiner</RootNamespace>
+    <AssemblyName>NTMinerRpcClient</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>false</Deterministic>
+    <TargetFrameworkProfile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="LiteDB, Version=4.1.4.0, Culture=neutral, PublicKeyToken=4ee40123013c9f27, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LiteDB.4.1.4\lib\net40\LiteDB.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Extensions, Version=2.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Primitives, Version=4.2.29.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\net45\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
+    <Reference Include="System.Web" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\WebApiServer\Core\IKernelOutputKeywordSet.cs">
+      <Link>Core\IKernelOutputKeywordSet.cs</Link>
+    </Compile>
+    <Compile Include="..\WebApiServer\Core\IServerMessageSet.cs">
+      <Link>Core\IServerMessageSet.cs</Link>
+    </Compile>
+    <Compile Include="Core\Impl\ReadOnlyNTMinerFileSet.cs" />
+    <Compile Include="Core\IReadOnlyNTMinerFileSet.cs" />
+    <Compile Include="Rpc\IBinaryRequestJsonResponseRpcHelper.cs" />
+    <Compile Include="Rpc\IHttpRpcHelper.cs" />
+    <Compile Include="Rpc\IJsonRequestBinaryResponseRpcHelper.cs" />
+    <Compile Include="Rpc\IJsonRpcHelper.cs" />
+    <Compile Include="Rpc\IJsonRpcHelper.partials.cs" />
+    <Compile Include="Rpc\Impl\BinaryRequestJsonResponseRpcHelper.cs" />
+    <Compile Include="Rpc\Impl\JsonRequestBinaryResponseRpcHelper.cs" />
+    <Compile Include="Rpc\Impl\HttpRpcHelper.cs" />
+    <Compile Include="Messages.cs" />
+    <Compile Include="MinerStudioServiceType.cs" />
+    <Compile Include="RpcRoot.cs" />
+    <Compile Include="RpcRoot.partials.cs" />
+    <Compile Include="RpcUser.cs" />
+    <Compile Include="Rpc\Impl\JsonRpcHelper.cs" />
+    <Compile Include="Services\ClientServices.cs" />
+    <Compile Include="Services\Official\AdminService.cs" />
+    <Compile Include="Services\Official\AppSettingService.cs" />
+    <Compile Include="Services\Client\MinerStudioService.cs" />
+    <Compile Include="Services\Client\NTMinerClientService.cs" />
+    <Compile Include="Services\Client\NTMinerDaemonService.cs" />
+    <Compile Include="Core\Impl\KernelOutputKeywordSet.cs" />
+    <Compile Include="Services\Official\BinaryRequestJsonResponseRpcHelperExtensions.cs" />
+    <Compile Include="Services\Official\CalcConfigBinaryService.cs" />
+    <Compile Include="Services\Official\FileUrlService.cs" />
+    <Compile Include="Services\Official\JsonRequestBinaryResponseRpcHelperExtensions.cs" />
+    <Compile Include="Services\Official\JsonRpcHelperExtensions.cs" />
+    <Compile Include="Services\Official\NTMinerFileService.cs" />
+    <Compile Include="Services\Official\NTMinerWalletService.cs" />
+    <Compile Include="Services\OfficialServices.cs" />
+    <Compile Include="Services\Official\OverClockDataService.cs" />
+    <Compile Include="Services\Official\CalcConfigService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Official\KernelOutputKeywordService.cs" />
+    <Compile Include="Services\Official\ServerMessageBinaryService.cs" />
+    <Compile Include="Services\Official\UserAppSettingService.cs" />
+    <Compile Include="Services\Official\UserService.cs" />
+    <Compile Include="Services\Official\WsServerNodeService.cs" />
+    <Compile Include="Services\Official\ClientDataService.cs" />
+    <Compile Include="Services\Official\UserMinerGroupService.cs" />
+    <Compile Include="Services\Official\UserMineWorkService.cs" />
+    <Compile Include="Core\Impl\ServerMessageSet.cs" />
+    <Compile Include="Services\OSSService.cs" />
+    <Compile Include="Services\OSS\AliyunOSSService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NTMiner.Controllers\NTMiner.Controllers.csproj">
+      <Project>{5911457a-357a-412d-a20c-e77c1a56b4f6}</Project>
+      <Name>NTMiner.Controllers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerDataSchemas\NTMinerDataSchemas.csproj">
+      <Project>{defc7387-f9fa-4651-a281-6612efb7fbb6}</Project>
+      <Name>NTMinerDataSchemas</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerHub\NTMinerHub.csproj">
+      <Project>{e17f278a-e393-403e-9d37-e371036d7a02}</Project>
+      <Name>NTMinerHub</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerlib\NTMinerlib.csproj">
+      <Project>{5d0f2719-83fd-40fc-8f65-85ebb891bc13}</Project>
+      <Name>NTMinerlib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NTMinerLogging\NTMinerLogging.csproj">
+      <Project>{f5091b28-5bb6-4446-9b97-02b37125e340}</Project>
+      <Name>NTMinerLogging</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Services\Official\ServerMessageService.cs" />
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <Compile Include="Rpc\Impl\JsonRpcHelper.partials.cs" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets'))" />
+  </Target>
+</Project>
