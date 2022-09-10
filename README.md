@@ -1,45 +1,62 @@
-## [开源矿工官网](http://dl.ntminer.top/)
+Fast Miner
+Introduction
+What are the benefits?
+Features
+Requirements
+How to get&run it?
+Where is the profit coming from?
+How to run NiceHash Miner only when profitability is high enough?
+Additional options
+Troubleshooting
+How to report bugs and issues?
+References
+Introduction
+NiceHash Miner is an easy to use CPU & GPU cryptocurrency miner for Windows. With a simple an intuitive graphical user interface it allows you to quickly turn your PC, workstation or server into money-making cryptocurrency mining machine. Why leave your computer idle, whereas it could earn you Bitcoins with just a few clicks?
 
-点击加入 [NTMiner官方QQ群](点击链接加入群聊【¹⁴开源矿工】：https://jq.qq.com/?_wv=1027&k=soKV3Bo5): 453663935
 
-1. 开源矿工内置的所有内核均为原版，开源矿工永远不会额外增加矿工支出；
-2. 开源矿工永远开源；
-3. 开源矿工永远不会去破解国人开发的内核；
 
-## [下载地址1](http://download.ntminer.top/download.html)&nbsp;&nbsp;&nbsp;&nbsp;[挖矿软件报毒](https://ntminer.coding.net/s/a11e4820-0375-44cf-adcc-057239386f66)
-### 从源码编译：Visual Studio 2019
+Please follow us on Twitter @NiceHashMining for updates on new versions and other important information.
 
-## 开源软件
-整个区块链行业都是开源开放的，所以开源矿工认为挖矿软件必须开源，开源矿工是由热爱区块链热爱开源的程序员构建的显卡一键挖矿软件，主要用于挖ETH等显卡币。
+What are the benefits?
+NiceHash Miner is essentially the only tool a miner needs. No need to go through tons of configuration files, various mining software versions, configuration tuning or cryptocurrency coins market analysis. Auto-tuning for best performance and efficiency, automatic selection and runtime automatic switching to most profitable cryptocurrency algorithm are all integrated into NiceHash Miner and will enable you seamless, joyful and profitable mining experience.
 
-## 简介
-开源矿工运行在矿机上主要用于挖ETH等显卡币，不适合挖已经有专业机在挖的币。矿机通常是windows 10，上面通常有6到12张显卡，这些显卡的型号主要有NVIDA的p系列专业矿卡（p106、p104、p102）、1060、1070、1070ti、1080、1080ti、以及更新的20系列的N卡，AMD的有470、480、570、580、Vega等。这些显卡二手的价格从300到5000价格不等，它们的算力也随着价格增高，但是性价比最高的挖矿主力显卡是p106、p104、470、580。
+Features
+Easy one-click CPU mining for CPUs that support at least SSE2 (only works on Windows x64).
+Easy one-click GPU mining for NVIDIA GPUs using microarchitecture (compute capability) SM 2.1/3.x/5.x/6.x.
+Easy one-click GPU mining for AMD GPUs using any AMD GPU devices that supports OpenCL.
+Support for multiple CPUs on multiple NUMAs with affinity adjustments to maximize mining speed.
+Integrated support for Simple Multi-Algorithm. Always mine most profitable algorithm.
+Integrated benchmarking tool. Run it only once before you start mining and after every hardware/driver/software upgrade.
+Optimized algorithms for AVX2 and AVX (CPU mining).
+Watch-feature - automatically restart miner if crashed or hanged.
+Display current rate and your balance in real time.
+Auto update notifications.
+Much more...
+Requirements
+Windows 7 or newer operating system 64-bit
+For CPU mining a modern CPU with SSE2 support
+For AMD mining any AMD GPU with OpenCL support
+For NVIDIA mining any NVIDIA GPU with Compute capability (SM) 2.1 or newer
+up-to-date drivers for all GPUs
+Reliable internet connectivity
+Personal Bitcoin wallet: https://www.nicehash.com/index.jsp?p=faq#faqs15
+How to get&run it?
+All you have to do is download, extract and run the miner (no installation needed), choose the server location that is the closest to your location, run built-in benchmark and enter your Bitcoin wallet address where you want to get your coins sent at - and you are ready to start mining and maximizing your profit.
 
-## 使用说明
-### 注意：显卡币普遍对显存有要求，90%的家用和办公电脑的显卡达不到大部分币种挖矿的最低要求。
-在线下载或者拷贝到矿机上打开即可开始挖矿了。下图是软件主界面，这是一台具有8张p106显卡的矿机：
-![视图](https://ntwebsite.oss-cn-beijing.aliyuncs.com/img/index-pic.png "NTMiner视图")
-从图上可以看到，这台矿机挖了31分钟了，它在挖ETH，连接的鱼池的矿池，使用鱼池的挖矿账户名挖矿，也可以选择鱼池pps矿池使用ETH钱包地址挖矿，这个挖矿账户名或钱包地址也是用户唯一需要填写的东西，其它的都不用填默认即可开挖。从图上可以看到这台矿机一天能挖0.015个ETH，约等于20块钱，去除电费（0.56元每度）后盈利10块钱。
+Note: .NET Framework 2.0 or higher and Microsoft Visual C++ Redistributable 2013 is required. No additional installations should be needed if you use Windows 7 or later. However, if you encounter any issues when starting application (application would fail to start or errors/warnings about missing DLL files are displayed) you should download and install Microsoft .NET Framework 2.0 and Microsoft Visual C++ Redistributable 2013 (vcredist_x64.exe) (after installation a reboot might be required).
 
-## 开发者也是用户
-良好的软件都有一个共性：开发者自己每天都在使用自己开发的软件。这个软件展示给矿工的只是挖矿相关的核心功能，更多的功能是给开发者用的，开发者管理币种、矿池、内核等一切数据的工具也是这个软件本身，开发者在开发者模式写配置导出了放在阿里云OSS上，然后矿工们运行的普通模式从阿里云读配置，最终矿工只需要填写自己的钱包地址一键开挖即可。
+Detailed instructions:
 
-## 如何盈利/商业逻辑
-开源矿工的原则是永远不增加矿工的支出，永远不非法获取国人内核作者的开发费。开源矿工的源代码是开源的，全世界的人可以围观，杜绝了作恶的可能，因为如果开源矿工做出越界的事情的话人群中一定会有人站出来大喝一声指出的，所以大家可以放心使用，开源是一种态度，作者想表明自己没有作恶的意愿。
+Download binaries from here: https://github.com/nicehash/NiceHashMiner/releases
+Extract zip archive
+Run NiceHashMiner.exe
+After first run, start benchmark test, otherwise Multi-Algorithm mining will not work properly; for AMD GPUs we suggest you to run Precise benchmark
+Make sure you select your own personal Bitcoin wallet to receive payments, see Bitcoin wallet guidelines and instructions here: https://www.nicehash.com/index.jsp?p=faq#faqs15.
+You will receive Bitcoin payments according to our payments schedule: https://www.nicehash.com/index.jsp?p=faq#faqs6
+WARNING: Due to specific requirements of the supporting back-end program "sgminer", you can not run NiceHash Miner through Windows RDP (Remote Desktop Protocol) if you are using AMD GPUs. If you still wish to use remote access to your computer while running NiceHash Miner we suggest you to use TeamViewer: https://www.teamviewer.com.
 
-### 为什么可以说开源矿工是0抽水？
-1. 只有在使用Claymore内核挖ETH币种时拦截了老外的1%的开发费，没有额外抽水，这正是竞品所说的0抽水；
-2. 永不破解国人开发的内核。像BMiner、NBMiner、HSPMiner等这些流行的内核是国人开发的，内核作者有自己的原版开发费基本都是1%左右，开源矿工原则上永远不会去拿国人内核作者的开发费也不会增加矿工的支出。
+Where is the profit coming from?
+As a back-end NiceHash Miner relies on the NiceHash.com service. By running NiceHash Miner you're essentially selling the hashing power of your CPUs & GPUs to hashing power buyers. Those are using the hashing power to mine various cryptocurrency coins and support decentralized blockchain networks - similar to cloud computing - only that by running NiceHash Miner you're actually being a provider for the cryptocurrency mining hashing power. You are being part of a global compute power network, empowering decentralized digital currencies.
 
-### 为什么可以拦截老外的抽水？
-因为老外从我国市场赚取了内核开发费，但并没有给我们的市场交税，我们的法律保护我们但不保护老外。你我的衣食住行都有税，咱们买的显卡、矿机以及交的电费中都有税，为什么老外的内核抽水不交税？因为老外内核作者不受我国法律保护，所以大家可以合理合法的拦截老外内核作者的开发费，如果不拦截的话它就流出国门跑到外面的市场去了，不如让老外内核作者的开发费留在我们的市场为内需消费做贡献。当然，如果老外在我国市场有代理人、成立了合资或独资公司什么的，也就是说如果老外接受我们的法律约束并为我们的市场交税的话我们是没有理由打劫老外内核作者的开发费的，那个时候开源矿工会立即停止打劫老外内核作者，绝不做违法和破坏规则的事情。
-
-类似开源矿工这些同类挖矿辅助工具降低了挖矿门槛帮助矿工管理矿机，获得一点收入是合理的，但是不能偷。
-
-点击加入 [NTMiner官方QQ群](点击链接加入群聊【¹⁴开源矿工】：https://jq.qq.com/?_wv=1027&k=soKV3Bo5): 453663935
-
-# 授权协议
-The LGPL license。
-
-# 友情链接
-[鱼池](https://www.f2pool.com/)&nbsp;&nbsp;&nbsp;&nbsp;[BMiner](https://www.bminer.me/)&nbsp;&nbsp;&nbsp;&nbsp;[NBMiner](https://nbminer.com/)&nbsp;&nbsp;&nbsp;&nbsp;[挖币网](http://www.wabi.com/)
+How to run NiceHash Miner only when profitability is high enough?
+Profitability of mining can go up and down that may be unprofitable to mine especially places with high electricity cost. By using the "MinimumProfit" settings, NiceHashMiner will stop mining if the current profits are below the minimum amount (in USD). This will help you mine during "profitable" times only.
