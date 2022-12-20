@@ -60,4 +60,3 @@ As a back-end NiceHash Miner relies on the NiceHash.com service. By running Nice
 
 How to run NiceHash Miner only when profitability is high enough?
 Profitability of mining can go up and down that may be unprofitable to mine especially places with high electricity cost. By using the "MinimumProfit" settings, NiceHashMiner will stop mining if the current profits are below the minimum amount (in USD). This will help you mine during "profitable" times only.
- 
